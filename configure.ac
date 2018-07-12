@@ -114,6 +114,9 @@ fi
 # Set visibility flags so only PKCS#11 entry points are exported
 ACX_VISIBILITY
 
+# Set HSMDialog flag
+ACX_HSM_DIALOG
+
 # If we should install the p11-kit module
 ACX_P11KIT
 

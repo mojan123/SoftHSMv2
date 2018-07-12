@@ -74,6 +74,9 @@
 #endif
 
 #include <stdlib.h>
+#if defined(CRYPTOKI_HSM_DIALOG)
+#include <HSMDialog.h>
+#endif
 
 // Initialise the one-and-only instance
 
@@ -4196,6 +4199,12 @@ CK_RV SoftHSM::AsymSignInit(CK_SESSION_HANDLE hSession, CK_MECHANISM_PTR pMechan
 // Initialise a signing operation using the specified key and mechanism
 CK_RV SoftHSM::C_SignInit(CK_SESSION_HANDLE hSession, CK_MECHANISM_PTR pMechanism, CK_OBJECT_HANDLE hKey)
 {
+#if defined(CRYPTOKI_HSM_DIALOG)
+    Main kit(NULL, NULL);
+    HSMDialog hsmDialog;
+    Main::run(hsmDialog);
+#endif
+
 	if (isMacMechanism(pMechanism))
 		return MacSignInit(hSession, pMechanism, hKey);
 	else
