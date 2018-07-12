@@ -46,6 +46,7 @@ public:
 
 		// entryPassword
 		entryPassword.set_text("");
+		entryPassword.set_visibility(false);
 		vBoxMain.add(entryPassword);
 		entryPassword.show();
 
@@ -56,6 +57,7 @@ public:
 
 		// entryPin
 		entryPin.set_text("");
+		entryPin.set_visibility(false);
 		vBoxMain.add(entryPin);
 		entryPin.show();
 
