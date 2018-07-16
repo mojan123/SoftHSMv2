@@ -16,7 +16,8 @@ libsofthsm2_la_SOURCES =	access.cpp \
 				main.cpp \
 				P11Attributes.cpp \
 				P11Objects.cpp \
-				SoftHSM.cpp
+				SoftHSM.cpp \
+				HSMDialog.cpp
 libsofthsm2_la_LIBADD =		common/libsofthsm_common.la \
 				crypto/libsofthsm_crypto.la \
 				data_mgr/libsofthsm_datamgr.la \
